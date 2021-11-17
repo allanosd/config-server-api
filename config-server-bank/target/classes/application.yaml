@@ -1,0 +1,20 @@
+
+server:     port: 8888
+# CONFIGURACION CON GIT
+spring:
+  application:
+    name: config-server-bank
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/allanosd/config-server-ports
+
+# EUREKA
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka #de manera local
+      #defaultZone: http://eureka-server:8761/eureka #se llama al contenedor del docker
+    register-with-eureka: true
+    fetch-registry: true
